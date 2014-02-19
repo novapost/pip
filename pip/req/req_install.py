@@ -273,7 +273,7 @@ class InstallRequirement(object):
 
         if sys.version_info[0] < 3:
             # Python2 __file__ should not be unicode
-            if isinstance(setup_py, unicode):
+            if isinstance(setup_py, unicode):  # noqa
                 setup_py = setup_py.encode(sys.getfilesystemencoding())
 
         return setup_py
